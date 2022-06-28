@@ -1,0 +1,26 @@
+.pdf-body{
+    width:84.5rem;
+}
+.company-logo.img{
+    height: 100px; width:300px;
+}
+
+.border-purple{
+    border: 2px solid black;
+    width:78.3rem;
+}
+.invoice-address{
+    width: 19rem;
+}
+
+table{
+    width:78.3rem;
+}
+tr:not(:last-child),td:not(:last-child),th{
+    border: 1px solid black !important;
+}
+
+
+.total-row:last-child>td{
+    border: none !important;
+}
