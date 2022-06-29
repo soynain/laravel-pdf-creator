@@ -34,6 +34,10 @@
         span{
             font-size: 1.5rem;
         }
+        #payment-terms{
+            word-break:break-all;
+            width:40%;
+        }
         .pdf-body {
             width: 84.5rem;
         }
@@ -165,7 +169,7 @@
                     <tr>
                         <th scope="row">{{$invoiceData['salesperson-name']}}</th>
                         <td>{{$invoiceData['job']}}</td>
-                        <td>{{$invoiceData['payment-terms']}}</td>
+                        <td id="payment-terms">{{$invoiceData['payment-terms']}}</td>
                         <td>{{$invoiceData['due-date']}}</td>
                     </tr>
                 </tbody>
