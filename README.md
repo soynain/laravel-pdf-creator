@@ -12,10 +12,16 @@ Si quieres usar flex con snappy debes usar una clase deprecada de css: -webkit-b
 pero prototipado y limitado, pero funciona muy bien. Solo usalo en pdf's.
 
 De resto, en esta práctica solo he aplicado:
+
 -File storage links
+
 -File handling
+
 -Snappy pdf creation
+
 -moz-box-flex
+
+-Manejo de DOM con javascript vanilla
 
 Aquí presento las caps de los formularios, no están validados porque me dio pereza, también me faltó añadir:
 -Un scroll a la tabla del tercer formulario
