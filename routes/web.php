@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +31,10 @@ Route::post('/generate-pdf',function(Request $body){
     $jsonProductsArray=json_decode($body->all()['jsonproducts']);
     Log::info($jsonProductsArray);
   //  Storage::disk('local')->put('example.txt', 'Contents');
-    $pdf=SnappyPdf::loadView('PdfDoc',array('invoiceData'=>$invoiceData,'jsonProductsArray'=>$jsonProductsArray))->save(storage_path('app/public/').'invoiceeddd.pdf');
-    $url = Storage::url(
-        'invoiceeddd.pdf'
-    );
+    $pdf=SnappyPdf::loadView('PdfDoc',array('invoiceData'=>$invoiceData,'jsonProductsArray'=>$jsonProductsArray));
+    $randomPdfFileName=Str::random(12).'.pdf';
+    Storage::disk('public')->put($randomPdfFileName,$pdf->download()->getOriginalContent());
+    $url=Storage::disk('public')->url($randomPdfFileName);
     Log::info($url);
     return response()->redirectTo($url);
 })->name('post-form');
