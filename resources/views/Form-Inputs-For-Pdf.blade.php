@@ -221,11 +221,13 @@
                 redirect:'follow',
                 body:formDataToBeSended
             }).then(response=>{
-               return response.json();
-            }).then(data=>{
-                console.log(data);
+               if(response.redirected){
+                window.location.href=response.url;
+               }
+            }).catch(err=>{
+                console.log(err);
             });
-            return false;
+         //   return false;
         }
     </script>
 </body>
